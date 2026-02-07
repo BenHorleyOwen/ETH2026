@@ -1,7 +1,1 @@
-# ETH2026
-ethoxford :D
-
-**Run**
-./init.sh 
-**OR**
-docker-compose -f Database-Jekyll/compose.yml up -d
+./start.sh and go to localhost:3000 to see the local deployment.
