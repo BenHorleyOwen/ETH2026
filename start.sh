@@ -1,3 +1,3 @@
 #!/bin/bash
-docker compose up -d
-docker compose logs -f
+docker compose -f ./Database-Node/compose.yml up -d
+docker compose -f ./Database-Node/compose.yml logs -f
