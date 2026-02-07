@@ -1,0 +1,20 @@
+services:
+  data-ingest:
+    build:
+      context: .
+      dockerfile: Dockerfile.ingest
+    container_name: data-ingest-${PROJECT_NAME:-default}
+    working_dir: /app
+    volumes:
+      - ./db:/output
+      - ./.env:/app/.env:ro
+    environment:
+      DB_HOST: mini-simple-db-${PROJECT_NAME:-default}
+      DB_USER: Euclid
+      DB_PASSWORD: star
+      DB_NAME: simple_db
+      DB_PORT: ${DB_PORT:-3306}
+    networks:
+      - db_node_network
+    profiles:
+      - tools
