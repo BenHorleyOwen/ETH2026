@@ -5,6 +5,18 @@
 echo "Initializing ETH2026 project..."
 echo ""
 
+# Update git submodules
+echo "📦 Initializing git submodules..."
+git submodule update --init --recursive
+
+if [ $? -eq 0 ]; then
+    echo "✅ Submodules initialized"
+else
+    echo "⚠️  Warning: Failed to initialize submodules"
+    echo "    Make sure you're in a git repository"
+fi
+echo ""
+
 # Get the current directory
 PROJECT_DIR="$(pwd)"
 PROJECT_NAME=$(basename "$PROJECT_DIR")
@@ -33,10 +45,9 @@ echo ""
 echo "Configuration:"
 cat .env
 echo ""
-echo "Note: Database files should be in ./db/ directory"
-echo ""
 echo "Next steps:"
 echo "  1. Edit .env if you need to change ports"
-echo "  2. Ensure db/simple_db.sql exists with your database schema"
-echo "  3. Run ./start.sh to start the stack"
+echo "  2. Run ./start.sh to start the stack"
+echo "  3. Visit http://localhost:3000"
+echo "  4. Run ./refresh-data.sh to populate database (optional)"
 echo ""
