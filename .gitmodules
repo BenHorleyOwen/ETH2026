@@ -1,6 +1,8 @@
 [submodule "Database-Node"]
 	path = Database-Node
 	url = https://github.com/BenHorleyOwen/Database-Node.git
+	branch = main
 [submodule "businessCrawler"]
 	path = businessCrawler
 	url = https://github.com/ekksttasy/businessCrawler
+	branch = master
